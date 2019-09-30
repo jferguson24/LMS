@@ -36,7 +36,11 @@ public class BookDAO implements CRUD<Book> {
 		}
 		bufferReader.close();
 	}
-	
+	/* Create returns true when a new 
+	 * new is created and added to the list
+	 * returns false when item is present
+	 * Or there is no author or publisher  
+	 * */
 
 	@Override
 	public boolean create(Book m) {
@@ -66,6 +70,11 @@ public class BookDAO implements CRUD<Book> {
 			}		
 	}
 
+	/* Retrieve returns true when book 
+	 * is found then stores the index and
+	 * returns false when author is not found 
+	 * */
+
 	@Override
 	public boolean retrieve(String name) {
 		// TODO Auto-generated method stub
@@ -77,6 +86,9 @@ public class BookDAO implements CRUD<Book> {
 		}
 		return false;
 	}
+	/* Finds the book title in which user wants change
+	 * then replaces the information with new Object
+	 * */
 
 	@Override
 	public boolean update(String name, Book newBook) {
@@ -102,7 +114,9 @@ public class BookDAO implements CRUD<Book> {
 		}
 		return false;
 	}
-
+	/* Finds the name of books and remove 
+	 * it if found
+	 * */
 	@Override
 	public boolean delete(String name) {
 		// TODO Auto-generated method stub
@@ -114,13 +128,18 @@ public class BookDAO implements CRUD<Book> {
 		}
 		return false;
 	}
-
+	
+	/*
+	 *To display all books currently stored in the list 
+	 * */
 	@Override
 	public void printList() {
 		// TODO Auto-generated method stub
 		books.forEach(item -> System.out.println(item));
 	}
-	
+	/*
+	 * For writing data to the database in the correct format
+	 * */
 	public String toString()
 	{
 		String prompt = "";
@@ -144,7 +163,8 @@ public class BookDAO implements CRUD<Book> {
 		return prompt;
 	}
 
-
+   /*To remove all books that has the given author name 
+    * */
 	public boolean removeAuthor(String name) {
 		// TODO Auto-generated method stub
 		this.index = 0;
@@ -160,6 +180,8 @@ public class BookDAO implements CRUD<Book> {
 		return false;
 	}
 	
+	/*To remove all books that has the given publisher name 
+	    * */
 	public void removePublisher(String name) {
 		// TODO Auto-generated method stub
 		this.index = 0;
@@ -173,7 +195,9 @@ public class BookDAO implements CRUD<Book> {
 		}
 		books = temp;
 	}
-	
+	/*Updates the book titles author names 
+	 * with the new author name
+	 * */
 	public void updateAuthors(String name,Author author) {
 		List<Book> temp = new ArrayList<>();
 		for(Book book: books) {
@@ -187,7 +211,9 @@ public class BookDAO implements CRUD<Book> {
 		}
 		books = temp;
 	}
-	
+	/*Updates the book titles publisher names 
+	 * with the new author name
+	 * */
 	public void updatePublishers(String name,Publisher publisher) {
 		List<Book> temp = new ArrayList<>();
 		for(Book book: books) {

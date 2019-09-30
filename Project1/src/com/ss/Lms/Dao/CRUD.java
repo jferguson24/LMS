@@ -15,4 +15,6 @@ public interface CRUD<Object> {
 	public void printList();
 	
 	public String display();
+	
+	public String toString();
 }

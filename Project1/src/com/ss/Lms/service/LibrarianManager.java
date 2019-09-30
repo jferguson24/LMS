@@ -82,7 +82,8 @@ public class LibrarianManager {
 		}		
 	}
 	
-	
+	/*Selects the name from the list so that 
+	 * */
 	public void adjust(String name, Object holder) {
 		if(category.compareTo("Author") == 0) {
 			control.getAllAuthors();
@@ -121,7 +122,9 @@ public class LibrarianManager {
 			control.saveBookData();
 		}
 	}
-	
+	/*Remove a name from the list
+	 *Category ensure that the write list is being accesses
+	 * */
 	public void delete(String name) {
 		if(category.compareTo("Author") == 0) {
 			control.getAllAuthors();
@@ -162,24 +165,4 @@ public class LibrarianManager {
 			control.saveBookData();
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 }

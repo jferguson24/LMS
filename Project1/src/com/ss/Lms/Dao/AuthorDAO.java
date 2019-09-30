@@ -67,8 +67,8 @@ public class AuthorDAO implements CRUD<Author> {
 		return false;
 		
 	}
-	/*
-	 * 
+	/*	Finds the author in which user wants change
+	 * then replaces the information with new object
 	 * */
 	@Override
 	public boolean update(String name, Author newAuthor) {
@@ -82,7 +82,9 @@ public class AuthorDAO implements CRUD<Author> {
 		}	
 		return false;
 	}
-
+	/* Finds the name of the author and remove 
+	 * it if found
+	 * */
 	@Override
 	public boolean delete(String name) {
 		if(authors.isEmpty()) {
@@ -96,7 +98,9 @@ public class AuthorDAO implements CRUD<Author> {
 		}
 		return false;
 	}
-
+	/*
+	 *To display all authors currently stored in the list 
+	 * */
 	
 	@Override
 	public void printList() {
@@ -112,7 +116,9 @@ public class AuthorDAO implements CRUD<Author> {
 		return prompt;
 
 	}
-	
+	/*
+	 * For writing data to the database in the correct format
+	 * */
 	public String toString()
 	{
 		String prompt = "";

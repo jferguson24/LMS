@@ -33,7 +33,10 @@ public class PublisherDAO implements CRUD <Publisher> {
 		bufferReader.close();
 	}
 	
-	
+	/* Create returns true when a new 
+	 * publisher is created and added to the list
+	 * returns false when item is present 
+	 * */
 	@Override
 	public boolean create(Publisher m) {
 		// TODO Auto-generated method stub
@@ -48,7 +51,10 @@ public class PublisherDAO implements CRUD <Publisher> {
 		publishers.add(m);
 		return true;
 	}
-
+	/* Retrieve returns true when publisher 
+	 * is found then stores the index and
+	 * returns false when publisher is not found 
+	 * */
 	@Override
 	public boolean retrieve(String name) {
 		// TODO Auto-generated method stub
@@ -60,7 +66,9 @@ public class PublisherDAO implements CRUD <Publisher> {
 		}
 		return false;
 	}
-
+	/*	Finds the publisher in which user wants change
+	 * then replaces the information with new object
+	 * */
 	@Override
 	public boolean update(String name, Publisher newPublisher) {
 		if(publishers.isEmpty()) {
@@ -72,6 +80,9 @@ public class PublisherDAO implements CRUD <Publisher> {
 		}
 		return false;
 	}
+	/* Finds the name of the publisher and remove 
+	 * it if found
+	 * */
 
 	@Override
 	public boolean delete(String name) {
@@ -85,13 +96,17 @@ public class PublisherDAO implements CRUD <Publisher> {
 		}
 		return false;
 	}
-
+	/*
+	 *To display all publishers currently stored in the list 
+	 * */
 	@Override
 	public void printList() {
 		// TODO Auto-generated method stub
 		publishers.forEach(item -> System.out.println(item));
 	}
-	
+	/*
+	 * For writing data to the database in the correct format
+	 * */
 	public String toString()
 	{
 		String prompt = "";
@@ -101,7 +116,7 @@ public class PublisherDAO implements CRUD <Publisher> {
 		}
 		return prompt;
 	}
-
+	
 
 	@Override
 	public String display() {

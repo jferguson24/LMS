@@ -23,6 +23,9 @@ public class Controller {
 		
 	}
 
+	/*
+	 * Load all of the all authors from file
+	 * */
 	
 	public AuthorDAO getAllAuthors(){
 		try {
@@ -33,6 +36,9 @@ public class Controller {
 		}
 		return authors;
 	}
+	/*
+	 * Load all of the publishers from file
+	 * */
 	
 	public PublisherDAO getAllPublishers(){
 		try {
@@ -44,6 +50,9 @@ public class Controller {
 		return publishers;
 	}
 	
+	/*
+	 * Load all of the books from file
+	 * */
 	public BookDAO getAllBooks(){
 		try {
 			books = new BookDAO();
@@ -54,7 +63,9 @@ public class Controller {
 		}
 		return books;
 	}
-	
+	/*
+	 * Save all of the authors to file
+	 * */
 	public void saveAuthorData(){
 		
 		outStream = null;
@@ -85,7 +96,9 @@ public class Controller {
 		
 	    }
 	}
-	
+	/*
+	 * Save all of the Books to file
+	 * */
 	public void saveBookData() {
 		outStream = null;
 	    file = new File("./resources/BookDatabase");
@@ -115,7 +128,9 @@ public class Controller {
 		
 	    }
 	}
-	
+	/*
+	 * Save all of the publishers to file
+	 * */
 	public void savePublisherData() {
 		outStream = null;
 	     file = new File("./resources/PublisherData");
@@ -145,6 +160,4 @@ public class Controller {
 		
 	    }
 	}
-	 
-	
 }
